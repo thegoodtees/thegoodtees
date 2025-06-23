@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE GOODTEES</title>
+  <style>
+    :root {
+      --primary-color: #111;
+      --secondary-color: #f5f5f5;
+      --accent-color: #ff6f61;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--secondary-color);
+      color: #333;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body.dark-mode {
+      background-color: #222;
+      color: #eee;
+    }
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: white;
+      text-decoration: none;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1541099649105-f69ad21f3246') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .section {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .product-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 1rem;
+      width: 250px;
+    }
+    .product-card img {
+      width: 100%;
+      border-radius: 6px;
+    }
+    .product-card button {
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    footer {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    .toggle-mode {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: #444;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="toggle-mode" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+  <header>
+    <h1>THE GOODTEES</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#products">Shop</a>
+      <a href="#custom">Customize</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Wear What’s You</h1>
+    <p>Custom-made, high-quality t-shirts that speak your style.</p>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About THE GOODTEES</h2>
+    <p>At THE GOODTEES, we believe that a t-shirt can say a thousand things. Whether you're expressing an idea, a mood, or a memory — we make it wearable. From minimalist prints to bold designs, our tees are crafted to reflect you.</p>
+  </section>
+
+  <section id="products" class="section">
+    <h2>Popular Tees</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1588776814546-f90d0a7fba85" alt="Graphic Tee">
+        <h3>Minimalist Tee</h3>
+        <p>₹499</p>
+        <button onclick="orderNow('Minimalist Tee')">Order on Instagram</button>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1623476041703-647b4dc9c33c" alt="Custom Quote Tee">
+        <h3>Custom Quote Tee</h3>
+        <p>₹599</p>
+        <button onclick="orderNow('Custom Quote Tee')">Order on Instagram</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="custom" class="section">
+    <h2>Customize Your Tee</h2>
+    <p>Have a design in mind? A message you want on your tee? Send us your idea, and we'll print it just for you.</p>
+    <p>DM us on Instagram or WhatsApp to get started!</p>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p>Email: kshitizakerni20@gmail.com</p>
+    <p>Instagram: <a href="https://instagram.com/thegoodtees" target="_blank">@thegoodtees</a></p>
+    <p>Phone: +91-9682667987</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 THE GOODTEES. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function orderNow(product) {
+      const message = encodeURIComponent(`Hi, I'm interested in ordering the ${product}. Can you help me with the details?`);
+      window.open(`https://instagram.com/thegoodtees`, '_blank');
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+
+</body>
+</html>
